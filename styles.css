@@ -1,0 +1,27 @@
+body{
+    height:10cm;
+    width:auto;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:55px;
+flex-direction: column;
+    
+}
+
+button{
+    height:2cm;
+    width: 2cm;
+    border-radius:50%;
+    border: 0px;
+    background-color: cornflowerblue;
+    cursor: pointer;
+
+}
+
+div.rps{
+    display:flex;
+    flex-direction: row;
+    gap:45px;
+}
