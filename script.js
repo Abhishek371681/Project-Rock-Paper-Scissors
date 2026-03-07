@@ -1,46 +1,62 @@
-// Computer Choice 
-function getComputerChoice() {
-  
-  const choices = ['rock','paper', 'scissors'];
-  
-  const randomIndex = Math.floor(Math.random()*3);
-  
-  const computerChoice = choices[randomIndex];
-  
-  return computerChoice;
-  
-}
+const buttons = document.querySelectorAll('button');
+let playerChoice = null;
+const givenChoices = ["Rock", "Paper", "Scissors"];
+let computerChoice = null;
+let computerDisplay = document.getElementById('computerDisplay');
+let playerDisplay = document.getElementById('playerDisplay');
+let winnerDisplay = document.getElementById('winnerDisplay');
 
 
-//Player Choice
-
-function getPlayerChoice() {
-  let choice = prompt("Enter Your Choice: ");
+    function getComputerChoice() {
+  let RandomIndex = Math.floor(Math.random()* 3);
+  let choice = givenChoices[RandomIndex];
+  console.log(choice);
   return choice;
-}
-
-
-//Game Round 
-
-
-function playRound(computerChoice, playerChoice) {
-  if(computerChoice === playerChoice) {
-    return "It's Tie!";
-  }
-  else if(computerChoice === "paper" && playerChoice === "rock" || computerChoice === "rock" && playerChoice === "scissors" || computerChoice === "scissors" && playerChoice === "paper" ){
-    return "Computer Wins!";
-  }
   
-  else {
-    return "You Win!";
-  }
+
 }
 
-const computerChoice = getComputerChoice();
 
-const playerChoice = getPlayerChoice();
+function getWinner() {
+if(playerChoice === 'Rock' && computerChoice === 'Scissors' || playerChoice === "Scissors" && computerChoice === "Paper" || playerChoice === 'Paper' && computerChoice === 'Rock' ) {
+  alert('Player Won!');
+}
+else if(playerChoice === 'Scissors' && computerChoice === 'Rock' || playerChoice === "paper" && ComputerChoice === "Scissors" || playerChoice === 'Rock' && computerChoice === 'Paper') {
+  alert('Computer Won!');
+}
+else {
+  alert("It's a Tie!");
+}
 
-alert("Computer Selected: " + computerChoice);
+}
 
-const result = playRound(computerChoice, playerChoice);
-alert(result);
+
+
+
+buttons.forEach((button) => {
+  button.addEventListener('click', () => 
+    {
+    playerChoice = button.textContent;
+    console.log('Player Chose: ', playerChoice);
+
+    computerChoice = getComputerChoice();
+
+
+    getWinner(playerChoice, computerChoice);
+
+
+
+  });
+
+
+
+});
+
+
+
+
+  
+
+
+
+
