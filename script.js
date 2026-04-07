@@ -5,6 +5,7 @@ let computerChoice = null;
 let computerDisplay = document.getElementById('computerDisplay');
 let playerDisplay = document.getElementById('playerDisplay');
 let winnerDisplay = document.getElementById('winnerDisplay');
+let Winner = document.getElementById('Winner');
 
 
     function getComputerChoice() {
@@ -19,13 +20,13 @@ let winnerDisplay = document.getElementById('winnerDisplay');
 
 function getWinner() {
 if(playerChoice === 'Rock' && computerChoice === 'Scissors' || playerChoice === "Scissors" && computerChoice === "Paper" || playerChoice === 'Paper' && computerChoice === 'Rock' ) {
-  alert('Player Won!');
+  Winner.innerText = 'Player Won!';
 }
 else if(playerChoice === 'Scissors' && computerChoice === 'Rock' || playerChoice === "paper" && ComputerChoice === "Scissors" || playerChoice === 'Rock' && computerChoice === 'Paper') {
-  alert('Computer Won!');
+  Winner.innerText = 'Computer Won!';
 }
 else {
-  alert("It's a Tie!");
+  Winner.innerText = 'Its Tie!';
 }
 
 }
