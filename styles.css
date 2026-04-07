@@ -20,6 +20,10 @@ button{
 
 }
 
+#Winner{
+    color:Red;
+}
+
 div.rps{
     display:flex;
     flex-direction: row;
